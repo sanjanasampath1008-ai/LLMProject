@@ -1,0 +1,38 @@
+# Step 1: Tokenization
+sentence = "AI makes learning easy"
+
+words = sentence.split()
+
+print("Words:")
+print(words)
+
+
+# Step 2: Embedding Vectors
+embeddings = [
+    [0.3, 0.2, 0.5],   # AI
+    [0.6, 0.4, 0.3],   # makes
+    [0.8, 0.7, 0.6],   # learning
+    [0.5, 0.6, 0.9]    # easy
+]
+
+print("\nEmbedding Vectors:")
+for vector in embeddings:
+    print(vector)
+
+
+# Step 3: Attention Weights
+weights = [0.25, 0.20, 0.35, 0.20]
+
+print("\nAttention Weights:")
+print(weights)
+
+
+# Step 4: Calculate Attention Output
+result = [0, 0, 0]
+
+for i in range(len(embeddings)):
+    for j in range(3):
+        result[j] += embeddings[i][j] * weights[i]
+
+print("\nFinal Attention Output:")
+print(result)
